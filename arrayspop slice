@@ -1,0 +1,35 @@
+//pop
+
+const days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+
+days.pop();
+// => "Sun"
+
+days;
+// => ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+
+//slice 
+
+const primes = [2, 3, 5, 7];
+
+const copyOfPrimes = primes.slice();
+
+primes;
+// => [2, 3, 5, 7]
+
+copyOfPrimes;
+// => [2, 3, 5, 7]
+
+//slice 
+const days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+
+//To return a new Array with the first element removed, we call .slice(1):
+
+const days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+
+days.slice(1);
+// => ["Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+
+
+
+
