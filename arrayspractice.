@@ -1,0 +1,17 @@
+// superhero baddies
+
+const superheroes = ["Catwoman", "Storm", "Jessica Jones", "Rogue"];
+
+superheroes.push("Wonder Woman");
+// => 4
+
+superheroes;
+// => ["Catwoman", "Storm", "Jessica Jones", "Wonder Woman"]
+
+const cities = ["New York", "San Francisco"];
+
+cities.unshift("Boston", "Chicago");
+// => 4
+
+cities;
+// => ["Boston", "Chicago", "New York", "San Francisco"]
