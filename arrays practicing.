@@ -1,0 +1,15 @@
+//arrayslabs. 
+
+const top10greatestqbs = [
+  "Tom Brady",
+  "Joe Montana",
+  "Johnny Unitas",
+  "Peyton Manning",
+  "Brett Favre", 
+  "Dan Marino", 
+  "John Elway", 
+  "Aaron Rodger",
+  "Roger Staubach", 
+  "Otto Graham",
+];
+
