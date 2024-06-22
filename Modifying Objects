@@ -1,0 +1,149 @@
+// Add an object property using dot or bracket notation. 
+const city = "New York";
+
+// the process of creating a property inside an existing object is similar; we specify the key and assign it a value:
+
+const circle = {};
+
+circle.radius = 5;
+
+circle["diameter"] = 10;
+
+circle.circumference = circle.diameter * Math.PI;
+//=> 31.41592653589793
+
+circle["area"] = Math.PI * circle.radius ** 2;
+//=> 78.53981633974483
+
+circle;
+//=> { radius: 5, diameter: 10, circumference: 31.41592653589793, area: 78.53981633974483 }
+
+Form Handling Example: 
+// When a user submits a profile creation form, the application dynamically adds the form fields as properties to the userProfile object.
+const userProfile = {};
+userProfile.name = "John Doe";
+userProfile.email = "john.doe@example.com";
+userProfile.age = 30;
+userProfile.address = "123 Main St, Anytown, USA";
+console.log(userProfile);
+// Output: { name: 'John Doe', email: 'john.doe@example.com', age: 30, address: '123 Main St, Anytown, USA' }
+
+
+// Financial Calculation example. 
+
+const loan ={}; 
+loan.principal =1000; 
+loan.interestRate = 0.05; 
+loan.years = 5; 
+loan.totalInterest = loan.principal * loan.interestRate * loan.years;
+loan.totalRepayment = loan.principal + loan.totalInterest;
+console.log(loan);
+// Output: { principal: 10000, interestRate: 0.05, years: 5, totalInterest: 2500, totalRepayment: 12500 }
+
+
+// Let's create an example for a 30-year-old male who makes $150,000 a year, has no debt, and wants to buy a $700,000 home with a $200,000 down payment. The interest rate is 8%, and the loan term is 30 years. We'll calculate the loan amount, monthly payment, total interest, and total repayment.
+//Mortgage Calculation Steps:
+Loan Amount: 
+home price
+−
+down payment
+home price−down payment
+Monthly Interest Rate: 
+annual interest rate
+/
+12
+annual interest rate/12
+Number of Payments: 
+years
+×
+12
+years×12
+Monthly Payment: Using the formula for an amortizing loan
+Monthly Payment
+=
+𝑃
+⋅
+𝑟
+⋅
+(
+1
++
+𝑟
+)
+𝑛
+(
+1
++
+𝑟
+)
+𝑛
+−
+1
+Monthly Payment= 
+(1+r) 
+n
+ −1
+P⋅r⋅(1+r) 
+n
+ 
+​
+ 
+Where:
+𝑃
+P = loan principal
+𝑟
+r = monthly interest rate
+𝑛
+n = number of payments
+Total Interest: 
+monthly payment
+×
+number of payments
+−
+loan amount
+monthly payment×number of payments−loan amount
+Total Repayment: 
+monthly payment
+×
+number of payments
+monthly payment×number of payments 
+
+// Here's the JavaScript code to perform these calculations:
+
+const loan = {};
+
+loan.homePrice = 700000;
+loan.downPayment = 200000;
+loan.principal = loan.homePrice - loan.downPayment;  // Loan amount
+loan.annualInterestRate = 0.08;
+loan.years = 30;
+loan.monthlyInterestRate = loan.annualInterestRate / 12;
+loan.numberOfPayments = loan.years * 12;
+
+loan.monthlyPayment = (loan.principal * loan.monthlyInterestRate * Math.pow(1 + loan.monthlyInterestRate, loan.numberOfPayments)) / 
+                      (Math.pow(1 + loan.monthlyInterestRate, loan.numberOfPayments) - 1);
+
+loan.totalRepayment = loan.monthlyPayment * loan.numberOfPayments;
+loan.totalInterest = loan.totalRepayment - loan.principal;
+
+console.log(loan);
+// Output:
+// {
+//   homePrice: 700000,
+//   downPayment: 200000,
+//   principal: 500000,
+//   annualInterestRate: 0.08,
+//   years: 30,
+//   monthlyInterestRate: 0.006666666666666667,
+//   numberOfPayments: 360,
+//   monthlyPayment: 3667.71,   // Approximate value
+//   totalRepayment: 1320377.57, // Approximate value
+//   totalInterest: 820377.57   // Approximate value
+// }
+
+// Explanation of the Code:
+We first define the initial values for the home price, down payment, loan principal, interest rate, and loan term.
+We calculate the monthly interest rate and the number of payments.
+We then use the amortizing loan formula to calculate the monthly payment.
+Finally, we calculate the total repayment and total interest paid over the life of the loan.
+This example demonstrates how to dynamically calculate loan details for a mortgage, which is a common real-world application in financial software and calculators.
